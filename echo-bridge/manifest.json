@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Echo Bridge — WhatsApp & Instagram Relay",
+  "version": "1.0.0",
+  "description": "Connects Echo to your WhatsApp Web & Instagram DM tabs: scan chats/groups, pick targets, repeat messages on a tempo.",
+  "content_scripts": [
+    {
+      "matches": ["*://web.whatsapp.com/*"],
+      "js": ["bridge-wa.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["*://www.instagram.com/*"],
+      "js": ["bridge-ig.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "128": "icon128.png"
+  }
+}
